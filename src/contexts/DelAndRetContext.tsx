@@ -8,13 +8,16 @@ export interface IDelAndRet  {
 }
 
 export interface IHis { 
+ no  : number  ;
  seq : number  ; 
  refSeq : number ; 
  labSeq : number; 
  eventCd : string ; 
- eventname : string ;
+ eventName : string ;
  timeStamp : string ; 
 }
+
+
 
 export interface IContext  { 
     dataList : IDelAndRet[] ; 
@@ -23,6 +26,10 @@ export interface IContext  {
     setCurrentSeq : Dispatch<SetStateAction<number>> ;
     historyList :  IHis[];
     setHistoryList : Dispatch<SetStateAction<IHis[]>>
+    reStoreList : IDelAndRet[];
+    setRestoreList : Dispatch<SetStateAction<IDelAndRet[]>>
+    selectedOption : IDelAndRet[]
+    setSelectedOption :  Dispatch<SetStateAction<IDelAndRet[]>>
 }
 
 export const DelAndRetContext = createContext<IContext | undefined>(undefined) ; 
